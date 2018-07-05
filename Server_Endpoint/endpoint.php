@@ -6,11 +6,11 @@ ini_set("error_log", "php-error.log");
 
 // Data return from DAOU Payment
 /*
- a:18:{s:9:"PAYMETHOD";s:4:"CARD";s:4:"CPID";s:8:"CTS15087";s:7:"DAOUTRX";s:20:"CTS18062016001494646";s:7:"ORDERNO";s:5:"12035";s:6:"AMOUNT";s:3:"845";s:8:"SETTDATE";s:14:"20180620160124";s:5:"EMAIL";s:0:"";s:6:"USERID";s:2:"37";s:8:"USERNAME";s:5:"admin";s:11:"PRODUCTCODE";s:1:"1";s:11:"PRODUCTNAME";s:50:"Dainut ‡π?‡∏°‡?‡∏?‡∏°‡∏∞‡∏°‡?‡∏ß‡?‡∏´‡∏¥‡∏°‡?‡∏≤‡?";s:6:"AUTHNO";s:8:"28060467";s:8:"CARDCODE";s:4:"CCLG";s:8:"CARDNAME";s:15:"Ω≈«—ƒ´µÂ - √º≈©";s:6:"CARDNO";s:16:"4499140000009382";s:14:"RESERVEDINDEX1";s:0:"";s:14:"RESERVEDINDEX2";s:0:"";s:14:"RESERVEDSTRING";s:0:"";}
+ a:18:{s:9:"PAYMETHOD";s:4:"CARD";s:4:"CPID";s:8:"YOUR_CP_ID";s:7:"DAOUTRX";s:20:"CTS18062016001494646";s:7:"ORDERNO";s:5:"12035";s:6:"AMOUNT";s:3:"845";s:8:"SETTDATE";s:14:"20180620160124";s:5:"EMAIL";s:0:"";s:6:"USERID";s:2:"37";s:8:"USERNAME";s:5:"admin";s:11:"PRODUCTCODE";s:1:"1";s:11:"PRODUCTNAME";s:50:"Dainut ‡π?‡∏°‡?‡∏?‡∏°‡∏∞‡∏°‡?‡∏ß‡?‡∏´‡∏¥‡∏°‡?‡∏≤‡?";s:6:"AUTHNO";s:8:"28060467";s:8:"CARDCODE";s:4:"CCLG";s:8:"CARDNAME";s:15:"Ω≈«—ƒ´µÂ - √º≈©";s:6:"CARDNO";s:16:"4499140000009382";s:14:"RESERVEDINDEX1";s:0:"";s:14:"RESERVEDINDEX2";s:0:"";s:14:"RESERVEDSTRING";s:0:"";}
 
  RESERVEDSTRING = Order comeplete URL on web
 
- URL FOR TEST IS :PAYMETHOD=CARD&CPID=CTS15087&DAOUTRX=CTS18062016001494646&ORDERNO=12035&AMOUNT=845&SETTDATE=20180620160124&EMAIL=&USERID=37&USERNAME=admin&PRODUCTCODE=1&PRODUCTNAME=Dainut ‡π?‡∏°‡?‡∏?‡∏°‡∏∞‡∏°‡?‡∏ß‡?‡∏´‡∏¥‡∏°‡?‡∏≤‡?&AUTHNO=28060467&CARDCODE=CCLG&CARDNAME=Ω≈«—ƒ´µÂ - √º≈©&CARDNO=4499140000009382&RESERVEDINDEX1=&RESERVEDINDEX2=&RESERVEDSTRING=http://www.yoonthai.com
+ URL FOR TEST after payment successIS :PAYMETHOD=CARD&CPID=YOUR_CP_ID&DAOUTRX=CTS18062016001494646&ORDERNO=12035&AMOUNT=845&SETTDATE=20180620160124&EMAIL=&USERID=37&USERNAME=admin&PRODUCTCODE=1&PRODUCTNAME=Dainut ‡π?‡∏°‡?‡∏?‡∏°‡∏∞‡∏°‡?‡∏ß‡?‡∏´‡∏¥‡∏°‡?‡∏≤‡?&AUTHNO=28060467&CARDCODE=CCLG&CARDNAME=Ω≈«—ƒ´µÂ - √º≈©&CARDNO=4499140000009382&RESERVEDINDEX1=&RESERVEDINDEX2=&RESERVEDSTRING=http://www.yoonthai.com
  */
 
  include 'class/config.php';
@@ -38,10 +38,12 @@ if(isset($_REQUEST['PAYMETHOD'])){
     die();
   }
 }else{
-    //Send data to Daou Payment Gateway
-    $urlpayment = "https://ssltest.kiwoompay.co.kr/card/DaouCardMng.jsp";
+    
     // Recieve all Data from  Checkout page via GET Method
     $data = $_GET; 
+
+    //Send data to Daou Payment Gateway
+    $urlpayment = $data['envurl'];//"https://ssltest.kiwoompay.co.kr/card/DaouCardMng.jsp";
 
     // Auto submit Form for send Any data to Daou Payment Gateway to Show Step to Payment on them system.
 ?>

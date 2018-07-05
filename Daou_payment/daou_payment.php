@@ -216,7 +216,7 @@ function wc_daou_payment_init(){
 
              //create parameter send to endpoint payment
              $paramdetail = array(
-                'CPID'          => "CTS15087",
+                'CPID'          => "YOU KEY FROM DAOU PROVIDER", //input you key from DAOU Payment
                 'ORDERNO'       => $order_number,
                 'AMOUNT'        => $product_amount,
                 "PRODUCTNAME"   => $product_name,
@@ -232,32 +232,6 @@ function wc_daou_payment_init(){
             return array(
                 'result'    => 'success',
                 'redirect' => 'https://www.yoonthai.com/webservices/endpoint.php?'.$param
-            );
-             /* // perform a click action on the submit button of the form you are going to return
-             wc_enqueue_js( 'jQuery( "#submit-form" ).click();' );
- 
-             // return your form with the needed parameters
-             echo '<form id="daou_pay" action="' . $enviroment_url . '" method="post" target="_top">
-             <input name="CPID" type="hidden" value="CTS15087">
-             <input name="ORDERNO" type="hidden" value="00101001">
-             <input name="PRODUCTTYPE" type="hidden" value="2">
-             <input name="BILLTYPE" type="hidden" value="1">
-             <input name="TAXFREECD" type="hidden" value="00">
-             <input name="AMOUNT" type="hidden" value="'.$product_amount.'">
-             <input name="PRODUCTNAME" type="hidden" value="'.$product_name.'">
-          
-             <input name="USERID" type="hidden" value="">
-             <input name="USERNAME" type="hidden" value="">
-             <input name="PRODUCTCODE" type="text" value="">
-                 <div class="btn-submit-payment" style="display: none;">
-                     <button type="submit" id="submit-form"></button>
-                 </div>
-             </form>
-             ';  */
-die();
-            return array(
-                'result'        => 'success',
-                'redirect'      => $this->get_return_url($order)
             );
         }
 
