@@ -7,7 +7,7 @@
 <br>
     <stong>your must install This plugin <a href="https://th.wordpress.org/plugins/jwt-authentication-for-wp-rest-api/"> JWT_Authentication plugin </a></stong>
 
-### Code Need Edit
+## Code Need Edit
     <strong>Server side</strong>
         - Edit file /class/config.php to set some information for your server (username, password, ck_key, cs_key)
     <strong>On plugin </strong>
