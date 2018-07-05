@@ -231,7 +231,7 @@ function wc_daou_payment_init(){
 
             return array(
                 'result'    => 'success',
-                'redirect' => 'https://www.yoonthai.com/webservices/endpoint.php?'.$param
+                'redirect' => 'https://Your_WEB_URL/ENDPOIN_FOLDERNAME/endpoint.php?'.$param
             );
         }
 

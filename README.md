@@ -12,7 +12,9 @@
 <p> <strong>Server side</strong>
         - Edit file /class/config.php to set some information for your server (username, password, ck_key, cs_key)
  <br/><br/><strong>On plugin </strong>
-        - Edit file row number <code>#219 'CPID' => "YOU KEY FROM DAOU PROVIDER", //input you key from DAOU Payment</code>
+        - Edit file daou_payment.php row number : <br/><br/>
+        <code>#219 'CPID' => "YOU KEY FROM DAOU PROVIDER", //input you key from DAOU Payment</code>
+       <br/> <code>#234  'redirect' => 'https://Your_WEB_URL/ENDPOIN_FOLDERNAME/endpoint.php?'.$param</code>
 </p>
 
 ## Installation
