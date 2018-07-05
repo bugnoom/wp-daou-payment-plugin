@@ -7,12 +7,14 @@
 <br>
     <stong>your must install This plugin <a href="https://th.wordpress.org/plugins/jwt-authentication-for-wp-rest-api/"> JWT_Authentication plugin </a></stong>
 </p>
+
 ## Code Need Edit
 <p> <strong>Server side</strong>
         - Edit file /class/config.php to set some information for your server (username, password, ck_key, cs_key)
  <strong>On plugin </strong>
         - Edit file row number <code>#219 'CPID' => "YOU KEY FROM DAOU PROVIDER", //input you key from DAOU Payment</code>
 </p>
+
 ## Installation
 <p>
     Before install you will contact DAOU Payment to get CPID by you will send endpoin to them you will do this step
